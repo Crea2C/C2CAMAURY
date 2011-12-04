@@ -10,6 +10,12 @@ blockquote:before, blockquote:after, q:before, q:after {content: ''; content: no
 table {border-collapse: collapse; border-spacing: 0;}
 /** END RESET **/
 
+.clearfix {
+    clear: both;
+    height: 0px;
+    margin: 0;
+    padding: 0;
+}
 body {
     margin: 10px;
     color: #696969;
@@ -48,12 +54,27 @@ h6 {
 /*     height: 150px; */
     margin-bottom: 20px;
 }
+#div_logo {
+    float: left;
+}
+#h1_sitename {
+    padding-top: 75px;
+    margin-left: 200px;
+}
 #main {
     padding: 10px;
 }
 #ul_main_nav {
     list-style-type: hebrew;
-    padding-left: 20px;
+    padding-left: 50px;
+    color: orange;
+}
+#ul_main_nav li a{
+    font-size: 14px;
+    color: orange;
+}
+#ul_main_nav li a:hover {
+    color: blue;
 }
 #footer {
     padding: 10px;
