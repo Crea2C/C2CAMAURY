@@ -112,62 +112,64 @@
 	
 </head>
 <body>
-	<!-- c'est la div qui contiendra l'animation //--> 
-	<div id="div_anim">
-		<div id="div_anim_contenu">
-			<!-- c'est ici qu'il faut mettre le contenu (l'animation) //-->
-			<h1>C'est ici qu'il y aura une Animation !</h1>
-			<p>
-				Ce code est largement optimisable (fait en 10 min), bien sûr, mais doit etre largement suffisant pour ce que tu as a faire.
-				<br />
-				Et oui ma gueule.....
-			</p>
-			<p>
-				<input id='btn_reset' type='button' value='Recharger la page' onclick='javascript: reset("cookie.php");' />
-			</p>
-			<!-- Fin de l'animation //-->
-		</div>
-		<div id="div_anim_bottom" onclick='javascript: reset("cookie.php"); return false;'><a href="">X Fermer l'animation</a></div>
-		
-	</div>
-	<!-- fin de la div animation //-->
-	<div id="main">
-		<h1>
-		<?php echo (isset($_COOKIE['mon_cookie']) && $_COOKIE['mon_cookie'] >> 1) ? "Un cookie est stocké" : "Aucun cookie !"; ?>
-		</h1>
-		<p>
-		<?php
-		if(isset($_COOKIE['mon_cookie'])){ //Si le cookie est present
-			
-			echo "<h2>la valeur du cookie est ".$_COOKIE['mon_cookie']."</h2>";
-			
-			if($_COOKIE['mon_cookie'] >> 1){
-				
-				echo "<p>";
-				echo "Vous visitez le site pour la ".$_COOKIE['mon_cookie']." ème fois !";
-				echo "</p>";
-				
-			}
-			echo "<p>";
-			echo "<input id='btn_delete' type='button' value='Supprimer le cookie' onclick='javascript: reset(\"cookie.php?zoby=reset\");' />";
-			echo "<input id='btn_reset' type='button' value='Recharger la page' onclick='javascript: reset(\"cookie.php\");' />";
-			echo "</p>";
-		}
-		else {
-			
-			echo "<h2>Aucun cookie n'est stocké sur votre ordinateur</h2>";
-			echo "<p>";
-			
-				echo "en fait il est crée et stocké mais ne sera utilisé qu'a votre prochaine visite.<br /><br />";
-				echo "Vous visitez le site pour la 1 ère fois !";
-			echo "</p>";
-			echo "<p>";
-			echo "<input id='btn_reset' type='button' value='Recharger la page' onclick='javascript: reset(\"cookie.php\");' />";
-			echo "</p>";
-		}
-		?>
-		</p>
-	</div>
+    <!-- c'est la div qui contiendra l'animation //--> 
+    <div id="div_anim">
+        <div id="div_anim_contenu">
+            <!-- c'est ici qu'il faut mettre le contenu (l'animation) //-->
+            <h1>C'est ici qu'il y aura une Animation !</h1>
+            <p>
+                Ce code est largement optimisable (fait en 10 min), bien sûr, mais doit etre largement suffisant pour ce que tu as a faire.
+                <br />
+                Et oui ma gueule.....
+            </p>
+            <p>
+                <input id='btn_reset' type='button' value='Recharger la page' onclick='javascript: reset("cookie.php");' />
+            </p>
+        <!-- Fin de l'animation //-->
+        </div>
+        <div id="div_anim_bottom" onclick='javascript: reset("cookie.php"); return false;'>
+            <a href="">X Fermer l'animation</a>
+        </div>
+    </div>
+    <!-- fin de la div animation //-->
+    <div id="main">
+        <h1>
+            <?php 
+            echo (isset($_COOKIE['mon_cookie']) && $_COOKIE['mon_cookie'] >> 1) ? "Un cookie est stocké" : "Aucun cookie !"; 
+            ?>
+        </h1>
+        <p>
+            <?php
+            if (isset($_COOKIE['mon_cookie'])) { //Si le cookie est present
+            
+                echo "<h2>la valeur du cookie est ".$_COOKIE['mon_cookie']."</h2>";
+            
+                if ($_COOKIE['mon_cookie'] >> 1) {
+                
+                    echo "<p>";
+                    echo "Vous visitez le site pour la ".$_COOKIE['mon_cookie']." ème fois !";
+                    echo "</p>";
+                
+                }
+                echo "<p>";
+                    echo "<input id='btn_delete' type='button' value='Supprimer le cookie' onclick='javascript: reset(\"cookie.php?zoby=reset\");' />";
+                    echo "<input id='btn_reset' type='button' value='Recharger la page' onclick='javascript: reset(\"cookie.php\");' />";
+                echo "</p>";
+            } else {
+            
+                echo "<h2>Aucun cookie n'est stocké sur votre ordinateur</h2>";
+                echo "<p>";
+                
+                echo "en fait il est crée et stocké mais ne sera utilisé qu'a votre prochaine visite.<br /><br />";
+                echo "Vous visitez le site pour la 1 ère fois !";
+                echo "</p>";
+                echo "<p>";
+                echo "<input id='btn_reset' type='button' value='Recharger la page' onclick='javascript: reset(\"cookie.php\");' />";
+                echo "</p>";
+            }
+            ?>
+        </p>
+    </div>
 
 </body>
 </html>
