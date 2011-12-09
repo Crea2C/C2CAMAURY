@@ -18,27 +18,33 @@
         <div id="main">
             <h3>Projets :</h3>
             <div id="div_list_test">
-                <ul id="ul_main_nav">
+                <table>
                 <?php
+                date_default_timezone_set('Europe/Paris');
                 $dossier = './';
                 if (is_dir($dossier)) {
                     if ($opDossier = opendir($dossier)) {
-                        $b = 0;
-                        $a = 0;
+                        $i = 0;
                         while (($fichier = readdir($opDossier)) !== false) {
+                            $oddEvenColor = ($i % 2 == 0) ? 'even' : 'odd';
                             if ($fichier != '..' && $fichier != '.' && $fichier != '.DS_Store' && substr($fichier, 0, 1) != '.') {
                                 if(is_dir($fichier)) {
                                     $cheminFichier = $dossier.$fichier;
                                     //echo $cheminFichier . '<br />' . PHP_EOL;
-                                    echo '<li class="li_main_nav"><a href="'. $fichier . '/">'. $fichier .'</a></li>' . PHP_EOL;
+                                    echo '<tr class="'. $oddEvenColor .'">';
+                                    echo '<td class="td_list_test0">';
+                                    echo '<a href="'. $fichier . '/">'. $fichier .'</a></td><td class="td_list_test1">crée le : '. date("d/m/Y-H:i:s", filectime($fichier));
+                                    echo '</td>';
+                                    echo '</tr>';
+                                    $i ++;
                                 }
-                                
                             }
+                            
                         }
                     }
                 }
                 ?>
-                </ul>
+                </table>
             </div>
         </div>
         <div id="footer">
