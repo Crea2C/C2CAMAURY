@@ -10,7 +10,7 @@
     <body>
         <div id="header">
             <div id="div_logo">
-                <img src="logo_hdr-a.png" />
+                <img src="logo_hdr-b.png" />
             </div>
             <h1 id="h1_sitename">C2CAMAURY : Un projet pour les boulets !</h1>
             <div class="clearfix"></div>
