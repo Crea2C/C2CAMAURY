@@ -33,7 +33,7 @@
                                     //echo $cheminFichier . '<br />' . PHP_EOL;
                                     echo '<tr class="'. $oddEvenColor .'">';
                                     echo '<td class="td_list_test0">';
-                                    echo '<a href="'. $fichier . '/">'. $fichier .'</a></td><td class="td_list_test1">crée le : '. date("d/m/Y-H:i:s", filectime($fichier));
+                                    echo ($i+1) .' - <a href="'. $fichier . '/">'. $fichier .'</a></td><td class="td_list_test1">crée le : '. date("d/m/Y-H:i:s", filectime($fichier));
                                     echo '</td>';
                                     echo '</tr>';
                                     $i ++;
